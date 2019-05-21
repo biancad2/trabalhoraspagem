@@ -20,9 +20,19 @@ function montarPagina2(pagina2){
             Array.from(noticia).forEach(x => document.body.appendChild(x));
         })
     });
- 
 }
 
+function montarPagina3(pagina3){
+    var parser = new DOMParser();
+    var documento = parser.parseFromString(pagina3, "text/html");
+    documento.querySelectorAll(".nav-menu").forEach(function(div){
+        var as = div.children;
+        Array.from(as).forEach(function(a){
+            var noticia = a.children;
+            Array.from(noticia).forEach(x => document.body.appendChild(x));
+        })
+    });
+}
 
 function sendReq() {
     var xhttp = new XMLHttpRequest();
@@ -36,9 +46,21 @@ function sendReq() {
   xhttp.open("GET", "https://www.aiimoveis.com/", true);
   xhttp.send();
 }
+function sendReq2() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        montarPagina3(this.responseText);
+      
+      }
+    };
+  xhttp.open("GET", "https://www.znimovel.com.br/", true);
+  xhttp.send();
+}
 
 function teste(){
     sendReq();
+    sendReq2();
 }
 
 
