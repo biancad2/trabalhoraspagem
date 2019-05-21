@@ -10,6 +10,18 @@ function montarPagina(pagina){
         })
     });
 }
+function montarPagina2(pagina2){
+    var parser = new DOMParser();
+    var documento = parser.parseFromString(pagina2, "text/html");
+    documento.querySelectorAll(".carousel-item").forEach(function(div){
+        var as = div.children;
+        Array.from(as).forEach(function(a){
+            var noticia = a.children;
+            Array.from(noticia).forEach(x => document.body.appendChild(x));
+        })
+    });
+ 
+}
 
 
 function sendReq() {
@@ -17,6 +29,7 @@ function sendReq() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         montarPagina(this.responseText);
+        montarPagina2(this.responseText);
         //alert("OI");
       }
     };
