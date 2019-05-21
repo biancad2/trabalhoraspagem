@@ -55,6 +55,17 @@ function montarPagina5(pagina5){
         })
     });
 }
+function montarPagina6(pagina6){
+    var parser = new DOMParser();
+    var documento = parser.parseFromString(pagina6, "text/html");
+    documento.querySelectorAll("#layout-footer").forEach(function(div){
+        var as = div.children;
+        Array.from(as).forEach(function(a){
+            var noticia = a.children;
+            Array.from(noticia).forEach(x => document.body.appendChild(x));
+        })
+    });
+}
 function sendReq() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -74,15 +85,32 @@ function sendReq2() {
         montarPagina3(this.responseText);
       montarPagina4(this.responseText);
       montarPagina5(this.responseText);
+       montarPagina6(this.responseText);
       }
     };
+ 
   xhttp.open("GET", "https://www.znimovel.com.br/", true);
+  xhttp.send();
+}
+
+function sendReq3() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+
+      montarPagina5(this.responseText);
+       montarPagina6(this.responseText);
+      }
+    };
+  xhttp.open("GET", "https://www.imovelweb.com.br/", true);
+
   xhttp.send();
 }
 
 function teste(){
     sendReq();
     sendReq2();
+    sendReq3();
 }
 
 
