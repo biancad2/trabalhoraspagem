@@ -44,6 +44,17 @@ function montarPagina4(pagina4){
         })
     });
 }
+function montarPagina5(pagina5){
+    var parser = new DOMParser();
+    var documento = parser.parseFromString(pagina5, "text/html");
+    documento.querySelectorAll(".home-noticia").forEach(function(div){
+        var as = div.children;
+        Array.from(as).forEach(function(a){
+            var noticia = a.children;
+            Array.from(noticia).forEach(x => document.body.appendChild(x));
+        })
+    });
+}
 function sendReq() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -62,6 +73,7 @@ function sendReq2() {
       if (this.readyState == 4 && this.status == 200) {
         montarPagina3(this.responseText);
       montarPagina4(this.responseText);
+      montarPagina5(this.responseText);
       }
     };
   xhttp.open("GET", "https://www.znimovel.com.br/", true);
