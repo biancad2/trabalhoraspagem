@@ -14,12 +14,9 @@ function montarPagina(pagina){
 function montarCSS(css){
     var parser = new DOMParser();
     var documento = parser.parseFromString(css, "text/html");
-    documento.querySelectorAll("href").forEach(function(div){
-        var as = div.children;
-        Array.from(as).forEach(function(a){
-            var noticia = a.children;
-            Array.from(noticia).forEach(x => document.style.backgroundColor="red"(x));
-        })
+    documento.querySelectorAll("link").forEach(function(link){
+        var as = link.href;
+        console.log(as);
     });
 
 }
@@ -83,9 +80,11 @@ function sendReq() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
+        montarCSS(this.responseText);
+        //olhar se esta funcionando
         montarPagina(this.responseText);
         montarPagina2(this.responseText);
-        montarCSS(this.responseText);
+        
         //alert("OI");
       }
     };
