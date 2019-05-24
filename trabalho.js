@@ -16,7 +16,13 @@ function montarCSS(css){
     var documento = parser.parseFromString(css, "text/html");
     documento.querySelectorAll("link").forEach(function(link){
         var as = link.href;
+       
+        
         console.log(as);
+    //Array.from(as).forEach(function(a){
+        //var noticia = a.children;
+          //Array.from(noticia).forEach(x => document.head.appendChild(x));
+      // })
     });
 
 }
