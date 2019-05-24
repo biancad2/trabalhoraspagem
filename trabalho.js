@@ -26,7 +26,7 @@ function montarCSS(css){
     });
 
 }
-function montarPagina2(pagina2){
+/*function montarPagina2(pagina2){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina2, "text/html");
     documento.querySelectorAll("#banners-6e0fp").forEach(function(div){
@@ -36,9 +36,9 @@ function montarPagina2(pagina2){
             Array.from(noticia).forEach(x => document.body.appendChild(x));
         })
     });
-}
+}*/
 
-/*function montarPagina3(pagina3){
+function montarPagina3(pagina3){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina3, "text/html");
     documento.querySelectorAll(".nav-menu").forEach(function(div){
@@ -60,7 +60,7 @@ function montarPagina4(pagina4){
         })
     });
 }
-function montarPagina5(pagina5){
+/*function montarPagina5(pagina5){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina5, "text/html");
     documento.querySelectorAll(".home-noticia").forEach(function(div){
@@ -97,14 +97,13 @@ function sendReq() {
   xhttp.open("GET", "https://www.aiimoveis.com/", true);
   xhttp.send();
 }
-/*function sendReq2() {
+function sendReq2() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         montarPagina3(this.responseText);
       montarPagina4(this.responseText);
-      montarPagina5(this.responseText);
-       montarPagina6(this.responseText);
+
       }
     };
  
@@ -112,7 +111,7 @@ function sendReq() {
   xhttp.send();
 }
 
-function sendReq3() {
+/*function sendReq3() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -128,7 +127,7 @@ function sendReq3() {
 
 function teste(){
     sendReq();
-    //sendReq2();
+    sendReq2();
     //sendReq3();
 }
 
