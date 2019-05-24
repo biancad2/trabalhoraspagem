@@ -29,7 +29,7 @@ function montarCSS(css){
 function montarPagina2(pagina2){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina2, "text/html");
-    documento.querySelectorAll(".marko-client-side").forEach(function(div){
+    documento.querySelectorAll("#banners-6e0fp, .marko-client-side").forEach(function(div){
         var as = div.children;
         Array.from(as).forEach(function(a){
             var noticia = a.children;
