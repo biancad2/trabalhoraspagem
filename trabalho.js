@@ -9,6 +9,19 @@ function montarPagina(pagina){
             Array.from(noticia).forEach(x => document.body.appendChild(x));
         })
     });
+
+}
+function montarCSS(css){
+    var parser = new DOMParser();
+    var documento = parser.parseFromString(css, "text/html");
+    documento.querySelectorAll("href").forEach(function(div){
+        var as = div.children;
+        Array.from(as).forEach(function(a){
+            var noticia = a.children;
+            Array.from(noticia).forEach(x => document.style.backgroundColor="red"(x));
+        })
+    });
+
 }
 function montarPagina2(pagina2){
     var parser = new DOMParser();
@@ -72,6 +85,7 @@ function sendReq() {
       if (this.readyState == 4 && this.status == 200) {
         montarPagina(this.responseText);
         montarPagina2(this.responseText);
+        montarCSS(this.responseText);
         //alert("OI");
       }
     };
