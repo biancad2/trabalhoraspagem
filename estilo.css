@@ -91,9 +91,21 @@ li a{
 }
 .col-lg-9.home-destaque-titulo{
     margin-left:13%;
+    margin-bottom: 2%;
 }
 .col-lg-3.home-destaque-paginacao{
         margin-top: -2%;
     float: right;
+    margin-right: 9%;
     width: 15%;
+    padding-left:2%;
+    font-size:20px;
+    color: grey;
+}
+.col-lg-3.home-destaque-paginacao a{
+    color:grey;
+}
+.col-lg-3.home-destaque-paginacao a:hover{
+    background-color:#337ab7;
+    color:white;
 }
