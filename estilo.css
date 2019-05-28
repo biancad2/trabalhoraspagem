@@ -74,7 +74,13 @@ x-features{float:left}.showcase-template-07 .carousel-item .features .box-featur
     display: inline-flex;
     color: white;
     width:100%;
+    margin-top: 3%;
 }
 li {
     margin: 1%;
+    margin-left:5%;
+    
+}
+li a{
+    color: white;
 }
