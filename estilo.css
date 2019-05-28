@@ -84,3 +84,16 @@ li {
 li a{
     color: white;
 }
+.col-lg-3.home-destaque-item{
+    margin: 0 auto;
+      width: 20%;
+    margin-left: 5%;
+}
+.col-lg-9.home-destaque-titulo{
+    margin-left:13%;
+}
+.col-lg-3.home-destaque-paginacao{
+        margin-top: -2%;
+    float: right;
+    width: 15%;
+}
