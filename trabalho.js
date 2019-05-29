@@ -1,5 +1,5 @@
 //AI IMOVEIS
-function montarPagina(pagina){
+/*function montarPagina(pagina){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina, "text/html");
     documento.querySelectorAll(".search-default").forEach(function(div){
@@ -10,22 +10,8 @@ function montarPagina(pagina){
         })
     });
 
-}
-function montarCSS(css){
-    var parser = new DOMParser();
-    var documento = parser.parseFromString(css, "text/html");
-    documento.querySelectorAll("link").forEach(function(link){
-        var as = link.href;
-       
-        
-        console.log(as);
-    //Array.from(as).forEach(function(a){
-        //var noticia = a.children;
-          //Array.from(noticia).forEach(x => document.head.appendChild(x));
-      // })
-    });
+}*/
 
-}
 /*function montarPagina2(pagina2){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina2, "text/html");
@@ -60,7 +46,7 @@ function montarPagina4(pagina4){
         })
     });
 }
-/*function montarPagina5(pagina5){
+function montarPagina5(pagina5){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina5, "text/html");
     documento.querySelectorAll(".home-noticia").forEach(function(div){
@@ -81,15 +67,14 @@ function montarPagina6(pagina6){
             Array.from(noticia).forEach(x => document.body.appendChild(x));
         })
     });
-}*/
+}
 function sendReq() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        montarCSS(this.responseText);
         //olhar se esta funcionando
-        montarPagina(this.responseText);
-        montarPagina2(this.responseText);
+       // montarPagina(this.responseText);
+      //  montarPagina2(this.responseText);
         
         //alert("OI");
       }
@@ -111,7 +96,7 @@ function sendReq2() {
   xhttp.send();
 }
 
-/*function sendReq3() {
+function sendReq3() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -123,12 +108,12 @@ function sendReq2() {
   xhttp.open("GET", "https://www.imovelweb.com.br/", true);
 
   xhttp.send();
-}*/
+}
 
 function teste(){
     sendReq();
     sendReq2();
-    //sendReq3();
+    sendReq3();
 }
 
 

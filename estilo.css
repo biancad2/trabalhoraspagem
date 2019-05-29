@@ -110,3 +110,14 @@ li a{
     background-color:#337ab7;
     color:white;
 }
+.col-lg-12.no-gutter.home-destaque-paginacao{
+    margin-left: 28%;
+    margin-top: 3%;
+}
+.home-destaque-descricao{
+    width: 100%;
+    margin-left: -6%;
+}
+.row.home-destaque-item-imobiliaria{
+    width:60%;
+}
