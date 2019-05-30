@@ -122,3 +122,15 @@ li a{
 html{
 overflow-x:hidden;
 }
+.footer-terms{
+    margin-top:25%;
+}
+.footer-copyright{
+    margin-top:10%;
+}
+.footer-visible-content{
+    margin-top:50%;
+}
+  .footer-naventcorps {
+      margin-left: 75%;
+  }

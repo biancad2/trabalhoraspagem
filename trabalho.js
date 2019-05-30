@@ -59,6 +59,17 @@ function montarPagina5(pagina5){
         })
     });
 }
+function montarFooter(paginafooter){
+    var parser = new DOMParser();
+    var documento = parser.parseFromString(paginafooter, "text/html");
+    documento.querySelectorAll(".footer-visible").forEach(function(div){
+        var as = div.children;
+        Array.from(as).forEach(function(a){
+            var noticia = a.children;
+            Array.from(noticia).forEach(x => document.body.appendChild(x));
+        })
+    });
+}
 
 
 function sendReq2() {
@@ -75,19 +86,6 @@ function sendReq2() {
   xhttp.send();
 }
 
-/*function sendReq3() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-
-      montarPagina5(this.responseText);
-       montarPagina6(this.responseText);
-      }
-    };
-  xhttp.open("GET", "https://www.aiimoveis.com/", true);
-
-  xhttp.send();
-}*/
 function sendReq() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -103,9 +101,21 @@ function sendReq() {
   xhttp.open("GET", "https://www.aiimoveis.com/", true);
   xhttp.send();
 }
+function sendReq3() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //olhar se esta funcionando
+       montarFooter(this.responseText);
+        //alert("OI");
+      }
+    };
+  xhttp.open("GET", "https://www.imovelweb.com.br/", true);
+  xhttp.send();
+}
 
 function teste(){
-    // sendReq3();
+    sendReq3();
      sendReq();
       sendReq2();
       
