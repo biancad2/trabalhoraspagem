@@ -82,19 +82,6 @@ function sendReq() {
   xhttp.open("GET", "https://www.aiimoveis.com/", true);
   xhttp.send();
 }
-function sendReq2() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        montarPagina3(this.responseText);
-      montarPagina4(this.responseText);
-
-      }
-    };
- 
-  xhttp.open("GET", "https://www.znimovel.com.br/", true);
-  xhttp.send();
-}
 
 function sendReq3() {
     var xhttp = new XMLHttpRequest();
@@ -109,10 +96,27 @@ function sendReq3() {
 
   xhttp.send();
 }
+function sendReq2() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        montarPagina3(this.responseText);
+      montarPagina4(this.responseText);
+
+      }
+    };
+ 
+  xhttp.open("GET", "https://www.znimovel.com.br/", true);
+  xhttp.send();
+}
+
+
+
+
 
 function teste(){
-    sendReq();
     sendReq2();
+    sendReq();
     sendReq3();
 }
 
