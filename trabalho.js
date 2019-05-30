@@ -115,10 +115,10 @@ function sendReq3() {
 }
 
 function teste(){
-    sendReq3();
+    
      sendReq();
       sendReq2();
-      
+      sendReq3();
 }
 
 

@@ -123,14 +123,14 @@ html{
 overflow-x:hidden;
 }
 .footer-terms{
-    margin-top:25%;
+    margin-top: -1.5%;
 }
-.footer-copyright{
-    margin-top:10%;
+
+.footer-copyright {
+    margin-left: 40%;
+    margin-top: 130%;
 }
-.footer-visible-content{
-    margin-top:50%;
+ .footer-naventcorps {
+         margin-left: 75%;
+    margin-top: -2.2%;
 }
-  .footer-naventcorps {
-      margin-left: 75%;
-  }
