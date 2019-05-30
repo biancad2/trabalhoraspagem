@@ -37,10 +37,10 @@ function montarPagina3(pagina3){
     });
 }
 
-function montarPagina4(pagina4){
+function montarPagina5(pagina5){
     var parser = new DOMParser();
-    var documento = parser.parseFromString(pagina4, "text/html");
-    documento.querySelectorAll(".home-destaque").forEach(function(div){
+    var documento = parser.parseFromString(pagina5, "text/html");
+    documento.querySelectorAll(".home-noticia").forEach(function(div){
         var as = div.children;
         Array.from(as).forEach(function(a){
             var noticia = a.children;
@@ -48,10 +48,10 @@ function montarPagina4(pagina4){
         })
     });
 }
-function montarPagina5(pagina5){
+function montarPagina4(pagina4){
     var parser = new DOMParser();
-    var documento = parser.parseFromString(pagina5, "text/html");
-    documento.querySelectorAll(".home-noticia").forEach(function(div){
+    var documento = parser.parseFromString(pagina4, "text/html");
+    documento.querySelectorAll(".home-destaque").forEach(function(div){
         var as = div.children;
         Array.from(as).forEach(function(a){
             var noticia = a.children;
@@ -115,7 +115,6 @@ function sendReq3() {
 }
 
 function teste(){
-    
      sendReq();
       sendReq2();
       sendReq3();
