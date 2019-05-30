@@ -1,5 +1,5 @@
 //AI IMOVEIS
-/*function montarPagina(pagina){
+function montarPagina(pagina){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina, "text/html");
     documento.querySelectorAll(".search-default").forEach(function(div){
@@ -10,9 +10,9 @@
         })
     });
 
-}*/
+}
 
-/*function montarPagina2(pagina2){
+function montarPagina2(pagina2){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina2, "text/html");
     documento.querySelectorAll("#banners-6e0fp").forEach(function(div){
@@ -22,7 +22,7 @@
             Array.from(noticia).forEach(x => document.body.appendChild(x));
         })
     });
-}*/
+}
 
 function montarPagina3(pagina3){
     var parser = new DOMParser();
@@ -60,7 +60,7 @@ function montarPagina5(pagina5){
 function montarPagina6(pagina6){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina6, "text/html");
-    documento.querySelectorAll("#layout-footer").forEach(function(div){
+    documento.querySelectorAll(".footer-desplegable").forEach(function(div){
         var as = div.children;
         Array.from(as).forEach(function(a){
             var noticia = a.children;
@@ -73,8 +73,8 @@ function sendReq() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         //olhar se esta funcionando
-       // montarPagina(this.responseText);
-      //  montarPagina2(this.responseText);
+       montarPagina(this.responseText);
+       montarPagina2(this.responseText);
         
         //alert("OI");
       }
