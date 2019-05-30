@@ -60,7 +60,7 @@ function montarPagina5(pagina5){
 function montarPagina6(pagina6){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina6, "text/html");
-    documento.querySelectorAll(".footer-social-media").forEach(function(div){
+    documento.querySelectorAll(".block-template-01").forEach(function(div){
         var as = div.children;
         Array.from(as).forEach(function(a){
             var noticia = a.children;
@@ -105,7 +105,7 @@ function sendReq3() {
        montarPagina6(this.responseText);
       }
     };
-  xhttp.open("GET", "https://www.imovelweb.com.br/", true);
+  xhttp.open("GET", "https://www.aiimoveis.com/", true);
 
   xhttp.send();
 }
