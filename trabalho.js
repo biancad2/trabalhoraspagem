@@ -11,11 +11,10 @@ function montarPagina(pagina){
     });
 
 }
-
-function montarPagina2(pagina2){
+function montarPagina6(pagina6){
     var parser = new DOMParser();
-    var documento = parser.parseFromString(pagina2, "text/html");
-    documento.querySelectorAll("#banners-6e0fp").forEach(function(div){
+    var documento = parser.parseFromString(pagina6, "text/html");
+    documento.querySelectorAll(".widget-block").forEach(function(div){
         var as = div.children;
         Array.from(as).forEach(function(a){
             var noticia = a.children;
@@ -23,6 +22,18 @@ function montarPagina2(pagina2){
         })
     });
 }
+function montarPagina5(pagina5){
+    var parser = new DOMParser();
+    var documento = parser.parseFromString(pagina5, "text/html");
+    documento.querySelectorAll(".home-noticia").forEach(function(div){
+        var as = div.children;
+        Array.from(as).forEach(function(a){
+            var noticia = a.children;
+            Array.from(noticia).forEach(x => document.body.appendChild(x));
+        })
+    });
+}
+
 
 function montarPagina3(pagina3){
     var parser = new DOMParser();
@@ -46,27 +57,20 @@ function montarPagina4(pagina4){
         })
     });
 }
-function montarPagina5(pagina5){
-    var parser = new DOMParser();
-    var documento = parser.parseFromString(pagina5, "text/html");
-    documento.querySelectorAll(".home-noticia").forEach(function(div){
-        var as = div.children;
-        Array.from(as).forEach(function(a){
-            var noticia = a.children;
-            Array.from(noticia).forEach(x => document.body.appendChild(x));
-        })
-    });
-}
-function montarPagina6(pagina6){
-    var parser = new DOMParser();
-    var documento = parser.parseFromString(pagina6, "text/html");
-    documento.querySelectorAll(".widget-block").forEach(function(div){
-        var as = div.children;
-        Array.from(as).forEach(function(a){
-            var noticia = a.children;
-            Array.from(noticia).forEach(x => document.body.appendChild(x));
-        })
-    });
+
+
+function sendReq2() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        montarPagina3(this.responseText);
+      montarPagina4(this.responseText);
+
+      }
+    };
+ 
+  xhttp.open("GET", "https://www.znimovel.com.br/", true);
+  xhttp.send();
 }
 function sendReq() {
     var xhttp = new XMLHttpRequest();
@@ -96,28 +100,12 @@ function sendReq3() {
 
   xhttp.send();
 }
-function sendReq2() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        montarPagina3(this.responseText);
-      montarPagina4(this.responseText);
-
-      }
-    };
- 
-  xhttp.open("GET", "https://www.znimovel.com.br/", true);
-  xhttp.send();
-}
-
-
-
 
 
 function teste(){
-    sendReq2();
     sendReq();
     sendReq3();
+     sendReq2();
 }
 
 
