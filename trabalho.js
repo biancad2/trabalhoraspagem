@@ -11,21 +11,11 @@ function montarPagina(pagina){
     });
 
 }
+
 function montarPagina6(pagina6){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina6, "text/html");
     documento.querySelectorAll(".widget-block").forEach(function(div){
-        var as = div.children;
-        Array.from(as).forEach(function(a){
-            var noticia = a.children;
-            Array.from(noticia).forEach(x => document.body.appendChild(x));
-        })
-    });
-}
-function montarPagina5(pagina5){
-    var parser = new DOMParser();
-    var documento = parser.parseFromString(pagina5, "text/html");
-    documento.querySelectorAll(".home-noticia").forEach(function(div){
         var as = div.children;
         Array.from(as).forEach(function(a){
             var noticia = a.children;
@@ -46,10 +36,22 @@ function montarPagina3(pagina3){
         })
     });
 }
+
 function montarPagina4(pagina4){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina4, "text/html");
     documento.querySelectorAll(".home-destaque").forEach(function(div){
+        var as = div.children;
+        Array.from(as).forEach(function(a){
+            var noticia = a.children;
+            Array.from(noticia).forEach(x => document.body.appendChild(x));
+        })
+    });
+}
+function montarPagina5(pagina5){
+    var parser = new DOMParser();
+    var documento = parser.parseFromString(pagina5, "text/html");
+    documento.querySelectorAll(".home-noticia").forEach(function(div){
         var as = div.children;
         Array.from(as).forEach(function(a){
             var noticia = a.children;
@@ -72,20 +74,6 @@ function sendReq2() {
   xhttp.open("GET", "https://www.znimovel.com.br/", true);
   xhttp.send();
 }
-function sendReq() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        //olhar se esta funcionando
-       montarPagina(this.responseText);
-       montarPagina2(this.responseText);
-        
-        //alert("OI");
-      }
-    };
-  xhttp.open("GET", "https://www.aiimoveis.com/", true);
-  xhttp.send();
-}
 
 function sendReq3() {
     var xhttp = new XMLHttpRequest();
@@ -100,12 +88,25 @@ function sendReq3() {
 
   xhttp.send();
 }
-
+function sendReq() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //olhar se esta funcionando
+       montarPagina(this.responseText);
+        
+        //alert("OI");
+      }
+    };
+  xhttp.open("GET", "https://www.aiimoveis.com/", true);
+  xhttp.send();
+}
 
 function teste(){
-    sendReq();
-    sendReq3();
+     sendReq3();
      sendReq2();
+     sendReq();
+      
 }
 
 
