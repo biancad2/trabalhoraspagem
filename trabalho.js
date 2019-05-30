@@ -75,7 +75,7 @@ function sendReq2() {
   xhttp.send();
 }
 
-function sendReq3() {
+/*function sendReq3() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -87,13 +87,15 @@ function sendReq3() {
   xhttp.open("GET", "https://www.aiimoveis.com/", true);
 
   xhttp.send();
-}
+}*/
 function sendReq() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         //olhar se esta funcionando
        montarPagina(this.responseText);
+        montarPagina5(this.responseText);
+       montarPagina6(this.responseText);
         
         //alert("OI");
       }
@@ -103,9 +105,9 @@ function sendReq() {
 }
 
 function teste(){
-     sendReq3();
-     sendReq2();
+    // sendReq3();
      sendReq();
+      sendReq2();
       
 }
 
