@@ -60,7 +60,7 @@ function montarPagina5(pagina5){
 function montarPagina6(pagina6){
     var parser = new DOMParser();
     var documento = parser.parseFromString(pagina6, "text/html");
-    documento.querySelectorAll(".footer-desplegable").forEach(function(div){
+    documento.querySelectorAll(".footer-social-media").forEach(function(div){
         var as = div.children;
         Array.from(as).forEach(function(a){
             var noticia = a.children;

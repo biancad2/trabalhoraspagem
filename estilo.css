@@ -79,6 +79,7 @@ x-features{float:left}.showcase-template-07 .carousel-item .features .box-featur
 li {
     margin: 1%;
     margin-left:5%;
+    list-style: none;
     
 }
 li a{
@@ -118,13 +119,10 @@ li a{
     width: 100%;
     margin-left: -6%;
 }
-.contenedor-footer, .footer-desplegable {
+li a {
     width: 100%;
     height: auto;
-    color: #000;
-    font-weight: 400;
-    background-color: #fff;
-    overflow: hidden;
-    max-height: 666px;
-    transition: max-height .6s;
+    color: red;
+    display:inline-block;
+    list-style:none;
 }
