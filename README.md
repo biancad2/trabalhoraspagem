@@ -14,7 +14,7 @@
   <p align="center">
     Primeiro projeto de raspagem de dados utilizando sites de imóveis.
     <br />
-    <a href="https://github.com/biancad2/trabalhoraspagemc"><strong>Veja os documentos »</strong></a>
+    <a href="https://github.com/biancad2/trabalhoraspagem"><strong>Veja os documentos »</strong></a>
   </p>
 </p>
 
